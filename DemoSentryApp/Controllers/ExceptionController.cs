@@ -12,4 +12,13 @@ public class ExceptionController : ControllerBase
         throw new NotImplementedException("This is a test exception for Sentry.");
         // return NotFound();
     }
+
+    [HttpGet("throw")]
+    public IActionResult ThrowException()
+    {
+        string? test = null;
+        int length = test.Length;
+        
+        return Ok("You won't reach this response.");
+    }
 }
